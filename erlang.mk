@@ -17,7 +17,7 @@
 ERLANG_MK_FILENAME := $(realpath $(lastword $(MAKEFILE_LIST)))
 export ERLANG_MK_FILENAME
 
-ERLANG_MK_VERSION = d80984c
+ERLANG_MK_VERSION = 472c405
 ERLANG_MK_WITHOUT = 
 
 # Make 3.81 and 3.82 are deprecated.
@@ -6135,11 +6135,11 @@ endef
 # Plugin-specific targets.
 
 ifndef WS
-ifdef SP
-WS = $(subst a,,a $(wordlist 1,$(SP),a a a a a a a a a a a a a a a a a a a a))
-else
+#ifdef SP
+#WS = $(subst a,,a $(wordlist 1,$(SP),a a a a a a a a a a a a a a a a a a a a))
+#else
 WS = $(tab)
-endif
+#endif
 endif
 
 bootstrap:

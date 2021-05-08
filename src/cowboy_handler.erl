@@ -34,6 +34,10 @@
 -spec execute(Req, Env) -> {ok, Req, Env}
 	when Req::cowboy_req:req(), Env::cowboy_middleware:env().
 execute(Req, Env=#{handler := Handler, handler_opts := HandlerOpts}) ->
+
+	trace_utils:debug_fmt( "Executing cowboy_handler with:~n - Req = ~p"
+						   "~n -Env = ~p", [ Req, Env ] ),
+
 	try Handler:init(Req, HandlerOpts) of
 		{ok, Req2, State} ->
 			Result = terminate(normal, Req2, State, Handler),
