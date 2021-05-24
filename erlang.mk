@@ -6124,11 +6124,11 @@ endef
 # Plugin-specific targets.
 
 ifndef WS
-ifdef SP
-WS = $(subst a,,a $(wordlist 1,$(SP),a a a a a a a a a a a a a a a a a a a a))
-else
+#ifdef SP
+#WS = $(subst a,,a $(wordlist 1,$(SP),a a a a a a a a a a a a a a a a a a a a))
+#else
 WS = $(tab)
-endif
+#endif
 endif
 
 bootstrap:
